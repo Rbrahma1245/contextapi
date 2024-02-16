@@ -21,6 +21,8 @@ class Homepage extends Component {
   render() {
     const { currentPage, itemsPerPage } = this.state;
 
+    if (this.context == null) return <div>Loading...</div>;
+
     // Calculate the index range for the current page
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -30,11 +32,10 @@ class Homepage extends Component {
       <div key={i} style={{ textAlign: "left" }}>
         <ul>
           <li>{e.title}</li>
+          <img style={{ width: 150, height: 150 }} src={e.image} />
         </ul>
       </div>
     ));
-
-    if (this.context == null) return <div>Loading...</div>;
 
     return (
       <div>

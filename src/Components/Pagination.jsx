@@ -18,9 +18,8 @@ class Pagination extends Component {
             style={{
               cursor: "pointer",
               marginRight: "5px",
-              textDecoration: currentPage === number ? "underline" : "none",
               background: currentPage === number ? "#535C91" : "none",
-              outline:"none"
+              outline: "none",
             }}
           >
             {number}
